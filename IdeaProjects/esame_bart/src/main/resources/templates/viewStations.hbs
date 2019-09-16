@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Daly City Bart Station</title>
+    {{>head.hbs}}
+
+    <style>
+    #table_bart {
+              font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            #table_bart td, #table_bart th {
+              border: 1px solid #ddd;
+              padding: 8px;
+              text-align: center;
+            }
+
+            #button_bart {
+              background-color: #0064a8; /* Blue */
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+            }
+
+            #table_bart tr:nth-child(even){background-color: #f2f2f2;}
+
+            #table_bart tr:hover {background-color: #ddd;}
+
+            #table_bart th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #0064a8;
+              color: white;
+            }
+
+       #header_bart {
+                color: #0064a8;
+                text-align: center;
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+              }
+    </style>
+
+</head>
+<body>
+    <h1 id="header_bart"> BART - Bay Area Rapid Transit </h1>
+    {{#each Station}}
+    <table id="table_bart">
+        <tr>
+            <th> Station </th>
+            <th> Address </th>
+            <th> City </th>
+            <th> State </th>
+            <th> Schedule </th>
+        </tr>
+        <tr>
+            <td> {{name}} </td>
+            <td> {{address}} </td>
+            <td> {{city}} </td>
+            <td> {{state}} </td>
+            <td> <a id="button_bart" href="/schedules">Schedule</a> </td>
+        </tr>
+    </table>
+    {{/each}}
+
+</body>
+</html>

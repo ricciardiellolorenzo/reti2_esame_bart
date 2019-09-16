@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'it.uniupo.reti2'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // RestTemplate
+    implementation 'org.springframework:spring-web:5.1.5.RELEASE'
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // gson support for the OAuth client library
+    implementation 'com.google.http-client:google-http-client-gson:1.28.0'
+    //spark
+    implementation "com.sparkjava:spark-core:2.8.0"
+    //handlebar
+    implementation "com.sparkjava:spark-template-handlebars:2.7.1"
+
+    implementation "org.slf4j:slf4j-simple:1.7.26"
+    //database
+    implementation "org.xerial:sqlite-jdbc:3.27.2.1"
+
+    compile "com.sparkjava:spark-core:2.8.0" // add to build.gradle (for Java users)
+
+    compile 'org.json:json:20171018'
+}
